@@ -1,5 +1,3 @@
-package patternsexamp;
-
 import java.awt.*;        // Using AWT container and component classes
 import java.awt.event.*;  // Using AWT event classes and listener interfaces
 
@@ -13,7 +11,10 @@ public class PizzaOrder{
 
   public void bakeDeepDish(){
 	System.out.format("Baking a deepdish... \n"); 
-    pb = new Pizza.Builder("Deep Dish"); 
+    pb = new Pizza.Builder("Deep Dish");
+    p.toppings.pepperoni=true;
+    p.toppings.frenchfries=true;
+    p.toppings.onion=true;
     p = pb.pizzas(1).build();
     reportOrder();
 
@@ -22,7 +23,18 @@ public class PizzaOrder{
   	System.out.format("Baking a thincrust... \n");
   	pb = new Pizza.Builder("Thin Crust");  
     p = pb.pizzas(1).build();
+    p.toppings.pepperoni=true;
+    p.toppings.onion=true;
     reportOrder();
+  }
+
+  public void bakeColtenPizza(){
+      System.out.format("Baking a Colten Pizza... \n");
+      pb = new Pizza.Builder("Colten Pizza");
+      p = pb.pizzas(1).build();
+      p.toppings.pepperoni=true;
+      p.toppings.frenchfries=true;
+      reportOrder();
   }
 
   private void reportOrder() {
