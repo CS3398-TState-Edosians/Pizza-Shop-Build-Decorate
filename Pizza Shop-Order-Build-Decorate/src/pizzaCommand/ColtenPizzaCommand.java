@@ -1,7 +1,6 @@
-import java.awt.*;        // Using AWT container and component classes
-import java.awt.event.*;  // Using AWT event classes and listener interfaces
+package pizzaCommand;
 
-public class ColtenPizzaCommand implements PizzaCommand {
+public class ColtenPizzaCommand {
     PizzaOrder order;
     public ColtenPizzaCommand(PizzaOrder order){
         this.order = order;
