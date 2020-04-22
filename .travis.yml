@@ -4,7 +4,7 @@ install: true
 
 script:
   - gradle clean build
-  - tar -zcf hello_world_build.tar.gz build
+  - tar -zcf build.tar.gz build
   - gradle dist --rerun-tasks
   - ls -R
 
