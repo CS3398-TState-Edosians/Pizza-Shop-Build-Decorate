@@ -24,7 +24,12 @@ public class PizzaOrder{
     p = pb.pizzas(1).build();
     reportOrder();
   }
-
+  public void bakeHale(){
+    System.out.format("Baking a Hale... \n");
+    pb = new Pizza.Builder("Hale");  
+    p = pb.pizzas(1).build();
+    reportOrder();
+  }
   private void reportOrder() {
       System.out.format("\nBuilt %s - num pies: %d, pepperoni: %b, onion: %b, frenchfries %b\n", 
     	p.getName(),  
