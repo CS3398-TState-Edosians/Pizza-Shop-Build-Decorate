@@ -1,0 +1,31 @@
+
+dist: xenial
+
+language: java
+install: true
+
+matrix: 
+  include: 
+  - jdk: oraclejdk9
+
+script: 
+  - git config --global push.default simple
+  - export GIT_TAG=$TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER
+  - gradle clean build
+  - tar -zcf Pizza.tar.gz out
+
+
+#  - ls -R
+  
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITPERM
+  file: 
+    - README.md
+    - Pizza.tar.gz 
+  skip_cleanup: true  
+  on:
+    tags: false
+    all_branches: true
+    
