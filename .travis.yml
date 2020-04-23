@@ -15,7 +15,7 @@ script:
   - ant compile
   - ant jar
   - ant run
-
+  
 before_deploy:
   - git config --global user.email "builds@travis-ci.com"
   - git config --global user.name "Travis CI"
@@ -31,8 +31,7 @@ deploy:
      $GITPERM
   file:
     - README.md
-    - hello_world_test_reports.tar.gz
-    - hello_world_executable_distributions.tar.gz
+    - PizzaOrderer.jar
   skip_cleanup: true
   on:
     tags: false
