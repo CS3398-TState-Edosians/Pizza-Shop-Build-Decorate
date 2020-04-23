@@ -22,7 +22,7 @@ before_deploy:
   - git config --global user.name "Travis CI"
   - export GIT_TAG=$TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER
   - echo "Just generated GIT_TAG for $TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER" >> $TRAVIS_BUILD_DIR/build.txt
-  
+  - git push <Marcos> -f --tags
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
   - git push -q https://$GITPERM@github.com/CS3398-TState-Edosians/Java_Gradle_Hello_World  --tags
 #  - ls -R
