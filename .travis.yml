@@ -34,7 +34,6 @@ deploy:
      $GITPERM
   file:
     - README.md
-    - PizzaOrderer.jar
   skip_cleanup: true
   on:
     tags: false
