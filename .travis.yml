@@ -15,9 +15,6 @@ script:
   - ant compile
   - ant jar
   - ant run
-  - tar -zcf hello_world_test_reports.tar.gz build/reports
-  - tar -zcf hello_world_executable_distributions.tar.gz build/distributions
-
 
 before_deploy:
   - git config --global user.email "builds@travis-ci.com"
