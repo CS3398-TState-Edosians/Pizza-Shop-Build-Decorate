@@ -14,8 +14,10 @@ public class PizzaOrderer{
     PizzaCommand thinCrust = new ThinCrustCommand(order);
     PizzaCommand hale = new HaleCommand(order);
     PizzaCommand MarcosPizza = new MarcosPizzaCommand(order);
-    PizzaCommand aldo = new AldoCommand(order); 
+    PizzaCommand aldo = new AldoCommand(order);    
+    PizzaCommand coltenPizza = new ColtenPizzaCommand(order);  
     PizzaCommand Isaiah = new IsaiahCommand(order);
+    
     // Order a deep Dish pizza
     control.setCommand(deepDish);
     control.submitOrder();
@@ -28,11 +30,16 @@ public class PizzaOrderer{
     control.setCommand(hale);
     control.submitOrder();
     
+    // Order a Marcos Pizza
     control.setCommand(MarcosPizza);
     control.submitOrder();
     
     // Order an Aldo pizza
     control.setCommand(aldo);
+    control.submitOrder();
+    
+    // Order a Colten pizza
+    control.setCommand(coltenPizza);
     control.submitOrder();
     
      // Order an Isaiah pizza
@@ -41,4 +48,5 @@ public class PizzaOrderer{
 
   }
 }
+
 
