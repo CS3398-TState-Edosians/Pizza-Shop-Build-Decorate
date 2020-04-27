@@ -14,12 +14,11 @@ public class PizzaOrder{
     public void bakeDeepDish(){
         System.out.format("Baking a deepdish... \n");
         pb = new Pizza.Builder("Deep Dish");
+        p = pb.pizzas(1).build();
         p.toppings.pepperoni=true;
         p.toppings.frenchfries=true;
-        p.toppings.onion=true;
-        p = pb.pizzas(1).build();
+        p.toppings.onion=true;  
         reportOrder();
-
     }
     public void bakeThinCrust(){
         System.out.format("Baking a thincrust... \n");
