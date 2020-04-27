@@ -14,6 +14,6 @@ public class IsaiahCommand implements PizzaCommand{
     this.order = order;
   }
   public void execute(){
-    order.bake();
+    order.bakeIsaiah();
   }
 }
