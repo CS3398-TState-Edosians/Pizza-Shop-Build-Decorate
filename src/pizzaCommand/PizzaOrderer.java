@@ -15,7 +15,7 @@ public class PizzaOrderer{
     PizzaCommand hale = new HaleCommand(order);
     PizzaCommand MarcosPizza = new MarcosPizzaCommand(order);
     PizzaCommand aldo = new AldoCommand(order); 
-    PizzaCommand Isaiah = newIsaiahCommand(order);
+    PizzaCommand Isaiah = new IsaiahCommand(order);
     // Order a deep Dish pizza
     control.setCommand(deepDish);
     control.submitOrder();
