@@ -41,6 +41,12 @@ public class PizzaOrder{
       pb = new Pizza.Builder("Aldo");
       p = pb.pizzas(1).build();
       reportOrder();
+  }  
+	public void bakeIsaiah(){
+      System.out.format("Baking Isaiah's pizza... \n");
+      pb = new Pizza.Builder("Isaiah");
+      p = pb.pizzas(1).build();
+      reportOrder();
   }
   public void bakeColtenPizza(){
         System.out.format("Baking a Colten Pizza... \n");
