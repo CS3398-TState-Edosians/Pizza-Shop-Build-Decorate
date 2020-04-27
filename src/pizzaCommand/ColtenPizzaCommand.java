@@ -1,4 +1,4 @@
-package pizzaCommand;
+package patternsexamp;
 
 public class ColtenPizzaCommand {
     PizzaOrder order;
