@@ -1,40 +1,17 @@
+dist: xenial
+
 language: java
-# the following will skip the installation of dependencies.
+install: ant deps
 install: true
 
+matrix:
+  include:
+  - jdk: oraclejdk9
+
 script:
-  - gradle clean build
-  - tar -zcf build.tar.gz build
-  - gradle dist --rerun-tasks
-  - ls -R
-
-
-before_deploy:
-  - git config --global user.email "builds@travis-ci.com"
-  - git config --global user.name "Travis CI"
+  - git config --global push.default simple
   - export GIT_TAG=$TRAVIS_BRANCH.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://$GITPERM@github.com/CS3398-TState-Edosians/Pizza-Shop-Build-Decorate  --tags
-  - ls -R
-  
-deploy:
-  skip_cleanup: true
-  overwrite: true
-  file_glob: true
-  provider: releases
-  api_key: 
-    secure: $GITPERM
-    
-  file:
-    - "README.md"
-    - "build.gradle"
-    - ".travis.yml"
-    - README.md
-    - dist/
-    - hello_world_build.tar.gz
-    - *.gz
-    - *
-  
-  on:
-    tags: false
-    all_branches: true
+  - ant clean 
+  - ant compile
+  - ant jar
+  - ant run
