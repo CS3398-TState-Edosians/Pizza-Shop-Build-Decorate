@@ -42,6 +42,14 @@ public class PizzaOrder{
       p = pb.pizzas(1).build();
       reportOrder();
   }
+  public void bakeColtenPizza(){
+        System.out.format("Baking a Colten Pizza... \n");
+        pb = new Pizza.Builder("Colten Pizza");
+        p = pb.pizzas(1).build();
+        p.toppings.pepperoni=true;
+        p.toppings.frenchfries=true;
+        reportOrder();
+    }
   private void reportOrder() {
       System.out.format("\nBuilt %s - num pies: %d, pepperoni: %b, onion: %b, frenchfries %b\n", 
     	p.getName(),  

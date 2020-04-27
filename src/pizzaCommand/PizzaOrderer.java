@@ -33,7 +33,12 @@ public class PizzaOrderer{
     // Order an Aldo pizza
     control.setCommand(aldo);
     control.submitOrder();
+    
+    // Order a Colten pizza
+    control.setCommand(coltenPizza);
+    control.submitOrder();
 
   }
 }
+
 
